@@ -1,0 +1,132 @@
+<div class="popup" id="popup">
+            
+    <form action="../userprocess/rateprocess.php" method="post">  
+        <div class="star-widget">
+                <input type="radio" name="rate" id="rate-5" value="5">
+                <label for="rate-5"  class="fas fa-star" class="rateLabel"></label>
+                <input type="radio" name="rate" id="rate-4" value="4">
+                <label for="rate-4"  class="fas fa-star" class="rateLabel"></label>
+                <input type="radio" name="rate" id="rate-3" value="3">
+                <label for="rate-3"  class="fas fa-star" class="rateLabel"></label>
+                <input type="radio" name="rate" id="rate-2" value="2">
+                <label for="rate-2"  class="fas fa-star" class="rateLabel"></label>
+                <input type="radio" name="rate" id="rate-1" value="1">
+                <label for="rate-1"  class="fas fa-star" class="rateLabel"></label>
+        </div>
+    
+    <h2>Rate <?php  echo $name; ?></h2>
+    <p>Your Review</p> <br>
+    <input type="hidden" value="<?php echo $row['id']; ?>" name="pid">
+    <input type="textarea" placeholder="Describe your experience" id="reviewInput" name="review">
+    <button type="submit">OK</button>
+    </form>
+   
+</div>
+
+
+ /* Rate Css Starts */
+     .star-widget input{
+            display: none;
+
+        }
+
+    .star-widget label{
+            font-size: 40px;
+            color: #444;
+            padding: 10px;
+            float: right;
+        }
+
+        input:not(:checked) ~ label:hover,
+        input:not(:checked) ~ label:hover ~ label{
+            color:#fd4;
+        }
+
+        input#rate-5:checked ~ label{
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input#rate-4:checked ~ label{
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input#rate-3:checked ~ label{
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input#rate-2:checked ~ label{
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input#rate-1:checked ~ label{
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        .btn{
+            padding: 10px 60px;
+            background: #fff;
+            border:0;
+            outline: none;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 500;
+            border-radius: 30px;
+        }
+
+        #reviewInput{
+            width:90%;
+            border: 1.5px solid black;
+            border-radius: 5px;
+            padding: 10px;
+
+        }
+        .popup{
+            width:400px;
+            background: #fff;
+            border-radius:6px;
+            position:absolute;
+            top: 0%;
+            left:50%;
+            transform: translate(-50%,-50%) scale(0.1);
+            text-align:center;
+            padding:0 30px 30px;
+            color:#333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            
+        }
+
+       
+
+        .popup h2{
+            font-size:38px;
+            font-weight:500px;
+            margin: 30px 0 10px;
+        }
+
+        .popup button{
+            width:100%;
+            margin-top:50px;
+            padding:10px 0;
+            background: #6fd649;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Rate Css Ends */
